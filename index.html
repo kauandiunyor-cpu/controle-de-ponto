@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ponto Prático</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Ponto Prático</h1>
+    </header>
+
+    <main class="content">
+      <!-- Seção Marcar Ponto -->
+      <section class="card">
+        <div class="card-title">Marcar Ponto (1 de Out)</div>
+        <div id="relogio" class="relogio-digital">19:28:21</div>
+        <div id="data-extenso" class="data-sub">QUINTA-FEIRA, 1 DE OUTUBRO</div>
+
+        <div class="botoes-grid">
+          <button class="btn-ponto" onclick="marcarPonto('ENTRADA')">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span>ENTRADA</span>
+          </button>
+          <button class="btn-ponto" onclick="marcarPonto('Saída Almoço')">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Saída Almoço</span>
+          </button>
+          <button class="btn-ponto" onclick="marcarPonto('Volta Almoço')">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volta Almoço</span>
+          </button>
+          <button class="btn-ponto" onclick="marcarPonto('Saída Final')">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Saída Final</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Seção Consultar Ficheiro -->
+      <section class="card">
+        <div class="card-header-flex">
+          <div class="card-title">Consultar Ficheiro</div>
+          <i class="fa-solid fa-folder card-icon"></i>
+        </div>
+        <span class="sub-label">DIA/MÊS/ANO</span>
+        
+        <div class="input-data-wrapper">
+          <input type="date" id="dataConsulta" onchange="buscarPontoPorData()">
+        </div>
+
+        <div id="resultadoFicheiro">
+          <!-- Registros carregados via JS -->
+        </div>
+      </section>
+
+      <!-- Seção Totais do Mês -->
+      <section class="card">
+        <div class="card-title" id="tituloTotais">Totais do Mês</div>
+        <div class="total-row">
+          <span>Total Horas:</span>
+          <strong id="totalHoras">0h 00m</strong>
+        </div>
+        <div class="total-row">
+          <span>Média Diária:</span>
+          <strong id="mediaDiaria">0h 00m</strong>
+        </div>
+      </section>
+    </main>
+
+    <!-- Barra de Navegação Inferior -->
+    <nav class="bottom-nav">
+      <button class="nav-item active">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Registrar</span>
+      </button>
+      <button class="nav-item">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>Histórico</span>
+      </button>
+      <button class="nav-item">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </button>
+      <button class="nav-item">
+        <i class="fa-solid fa-gear"></i>
+        <span>Configurações</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
